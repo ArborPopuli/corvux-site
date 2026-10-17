@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="color-scheme" content="dark light" />
+<title>Corvux — In natura veritas, in via fortuna</title>
+<meta name="description" content="Corvux — AI research and engineering. A developmental learning kernel, protein representation, and local-first agent systems." />
+<link rel="preload" href="fonts/MonaSansVF-opsz-wght.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="src/style.css" />
+</head>
+<body>
+
+<!-- ══ 粒子画布（底层氛围，Rhine 风） ══ -->
+<canvas id="field" aria-hidden="true"></canvas>
+
+<!-- 3D 资源加载指示（隧道慢链路下可见；加载完自动移除） -->
+<div id="loader" aria-hidden="true">
+  <div class="loader-bar"><i></i></div>
+  <div class="loader-meta">
+    <span class="loader-label">loading specimen</span>
+    <span class="loader-pct" id="loader-pct">0%</span>
+  </div>
+</div>
+
+<!-- ══ 顶栏（GitHub Universe 风：细线网格 + 等宽小字） ══ -->
+<header class="topbar">
+  <a class="mark" href="#top" aria-label="Corvux home">
+    <span class="mark-glyph">◈</span>
+    <span class="mark-word">CORVUX</span>
+  </a>
+  <nav class="nav" aria-label="Main">
+    <a href="#work">Work</a>
+    <a href="#now">Now</a>
+    <a href="#notes">Notes</a>
+  </nav>
+  <div class="topbar-right">
+    <span class="clock" id="clock" aria-hidden="true">--:--:--</span>
+    <a class="btn-pass" href="#contact">Get in touch <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ══ HERO ══ -->
+  <section class="hero">
+    <!-- 3D backdrop: full-bleed, sits behind all hero content -->
+    <div class="stage" id="stage" aria-hidden="true">
+      <canvas id="scene"></canvas>
+    </div>
+
+    <!-- Giant wordmark spanning full width (GitHub Universe device) -->
+    <div class="hero-title">
+      <h1><span class="line" data-reveal>CORVUX</span></h1>
+      <p class="hero-sub" data-reveal style="--d:1">
+        <span>Artificial life, grown not trained</span>
+        <em class="latin">in natura veritas</em>
+      </p>
+    </div>
+
+    <!-- 信息行：细线三栏 -->
+    <div class="hero-grid">
+      <div class="hero-meta">
+        <div class="meta-cell">
+          <span class="k">field</span>
+          <span class="v">AI research · comp. biology</span>
+        </div>
+        <div class="meta-cell">
+          <span class="k">status</span>
+          <span class="v"><span class="dot" id="status-dot"></span><span id="status-text">checking…</span></span>
+        </div>
+        <div class="meta-cell">
+          <span class="k">focus</span>
+          <span class="v">developmental kernel</span>
+        </div>
+      </div>
+
+      <div class="hero-lede">
+        <p class="lede" data-reveal style="--d:2">
+          Building a <em>developmental learning kernel</em> — frozen representations,
+          incrementally growing heads, and an explicit forgetting budget.
+          <span class="dim">Protein folding is only the first proving ground.</span>
+        </p>
+      </div>
+
+      <div class="hero-cta">
+        <a class="btn-primary" href="#work">
+          <span>See the work</span><span aria-hidden="true">↘</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="stage-caption" aria-hidden="true">
+      <span class="line-h"></span>
+      <span class="cap">Fig. 01 — developmental kernel, rendered in real time</span>
+    </div>
+
+    <div class="scroll-hint" aria-hidden="true">
+      <span>scroll</span><span class="tick"></span>
+    </div>
+  </section>
+
+  <!-- ══ NOW ══ -->
+  <section class="now" id="now">
+    <div class="sec-head">
+      <span class="sec-no">01</span>
+      <h2>Now</h2>
+      <span class="sec-note">updated <time id="updated">—</time></span>
+    </div>
+    <div class="now-grid" id="now-grid">
+      <!-- JS 注入 -->
+    </div>
+  </section>
+
+  <!-- ══ ARXIVS ══ -->
+  <section class="arxivs" id="work">
+    <div class="sec-head">
+      <span class="sec-no">02</span>
+      <h2>Arxivs</h2>
+      <span class="sec-note">A · R · X · I · V · S</span>
+    </div>
+    <div class="arxiv-grid" id="arxivs-grid">
+      <!-- JS 注入 -->
+    </div>
+  </section>
+
+  <!-- ══ NOTES ══ -->
+  <section class="notes" id="notes">
+    <div class="sec-head">
+      <span class="sec-no">03</span>
+      <h2>Lab notes</h2>
+      <span class="sec-note">working thoughts</span>
+    </div>
+    <ol class="notes-list" id="notes-list">
+      <!-- JS 注入 -->
+    </ol>
+  </section>
+
+  <!-- ══ CONTACT ══ -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <h2>Let’s build something<br />that grows.</h2>
+      <div class="contact-links">
+        <button class="mail-btn" id="mail-btn" data-user="corvux" data-domain="dpdns.org">
+          <span class="mail-label">reveal email</span>
+          <span aria-hidden="true">✉</span>
+        </button>
+        <a class="link-out" href="https://github.com/ArborPopuli" target="_blank" rel="noopener">
+          GitHub <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <span>© <span id="year">2026</span> Corvux</span>
+  <span class="foot-mid">In natura veritas · in via fortuna</span>
+  <span class="foot-right" id="foot-status">—</span>
+</footer>
+
+<script type="module" src="src/main.js"></script>
+</body>
+</html>

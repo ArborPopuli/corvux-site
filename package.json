@@ -1,0 +1,12 @@
+{
+  "name": "corvux-site",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Corvux — personal site. GitHub Universe layout, Rhine Lab spine and particles, ARXIVS archive.",
+  "scripts": {
+    "dev": "node serve.mjs",
+    "shot": "node _research/shot.mjs",
+    "scroll": "node _research/scrolltest.mjs"
+  }
+}
