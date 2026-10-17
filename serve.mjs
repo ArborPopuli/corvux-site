@@ -22,16 +22,11 @@ const MIME = {
   '.txt': 'text/plain; charset=utf-8',
 };
 
-/* 静态资源前缀 → public/ */
-const PUBLIC_PREFIX = /^\/(fonts|images|assets|icons)\//;
-
 function resolvePath(urlPath) {
   let p = decodeURIComponent(new URL(urlPath, 'http://x').pathname);
   if (p === '/') p = '/index.html';
   const safe = normalize(p).replace(/^(\.\.[/\\])+/, '');
-  let fp = join(ROOT, safe);
-  if (PUBLIC_PREFIX.test(p)) fp = join(ROOT, 'public', p);
-  return fp;
+  return join(ROOT, safe);
 }
 
 const server = createServer(async (req, res) => {
